@@ -47,14 +47,15 @@ You can then execute your native executable with: `./build/barcody-1.0.0-SNAPSHO
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/gradle-tooling.
 
-## Related Guides
+### Testing it
+If you like you can test the running service and paste this into your browser for default behaviour:
 
-- Kotlin ([guide](https://quarkus.io/guides/kotlin)): Write your services in Kotlin
+```
+http://localhost:8080/barcodes/ean13/012345678901
+```
 
-## Provided Code
+Or otherwise provide params for sizing:
 
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+```
+http://localhost:8080/barcodes/ean13/012345678901?width=500&height=250
+```
