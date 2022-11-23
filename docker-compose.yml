@@ -1,0 +1,7 @@
+version: '2'
+services:
+  barcode-service:
+    container_name: gs-barcody
+    image: geeksven/gs-barcody:latest
+    ports:
+      - 8080:8080
