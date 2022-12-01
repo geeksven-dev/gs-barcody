@@ -10,5 +10,5 @@ class PingPongResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    fun pingPong() = "pong"
+    fun pingPong() = "pong pong"
 }
