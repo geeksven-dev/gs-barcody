@@ -25,4 +25,15 @@ class BarcodeResource(private val barcodeService: BarcodeService) {
         barcodeService.generateEAN13BarcodeImage(barcode, width, height)
             .also { logger.info("barcode requested: $barcode / ($width by $height)") })
 
+    @GET
+    @Produces("text/plain")
+    @Path("/ean13b64/{barcode}")
+    fun getEAN13BarcodeB64(
+        barcode: String,
+        @RestQuery @DefaultValue("300") width: Int,
+        @RestQuery @DefaultValue("150") height: Int
+    ): Uni<String> = Uni.createFrom().item(
+        barcodeService.generateEAN13BarcodeB64Image(barcode, width, height)
+            .also { logger.info("barcode requested: $barcode / ($width by $height)") })
+
 }
